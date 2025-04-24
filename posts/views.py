@@ -9,11 +9,15 @@
 #    return render(request, "post_list.html", {"posts":posts})
 
 from django.views.generic import ListView
-from .models import Post
+from .models import Post, Receita
 
 
 class PostList(ListView):
     model = Post
     template_name = "post_list.html"
+
+class ReceitaList(ListView):
+    model = Receita
+    template_name = "receita_list.html"
 
 

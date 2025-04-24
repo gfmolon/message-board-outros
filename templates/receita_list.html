@@ -1,0 +1,10 @@
+<!-- templates/receita_list.html -->
+
+<h1>Receitas Board Homepage</h1>
+<ul>
+    {% for receita in receita_list%}
+    <li>{{ receita.text }}</li>
+    {% endfor %}
+</ul>
+
+
