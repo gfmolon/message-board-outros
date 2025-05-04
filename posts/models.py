@@ -17,6 +17,7 @@ class Receita(models.Model):
 
 
 class Produto(models.Model):
+    ordem = models.IntegerField()
     nome = models.CharField(max_length=100)
     descricao = models.TextField(blank=True)
     preco = models.DecimalField(max_digits=10, decimal_places=2)

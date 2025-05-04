@@ -26,7 +26,15 @@ class ReceitaList(ListView):
 
 ProdutoForm = modelform_factory(
     Produto,
-    fields=["nome", "descricao", "preco", "estoque", "imagem_pequena", "imagem_grande"],
+    fields=[
+        "ordem",
+        "nome",
+        "descricao",
+        "preco",
+        "estoque",
+        "imagem_pequena",
+        "imagem_grande",
+    ],
 )
 
 
@@ -34,6 +42,7 @@ class ProdutoList(ListView):
     model = Produto
     template_name = "produto_list.html"
     context_object_name = "produtos"
+    ordering = ["-ordem"]
 
 
 def cadastrar_produto(request):
