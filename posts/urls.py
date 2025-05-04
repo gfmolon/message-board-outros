@@ -1,11 +1,8 @@
-# posts/urls.py
 from django.urls import path
-# from .views import post_list
-from .views import PostList, ReceitaList
+from .views import PostList, ReceitaList, ProdutoList
 
 urlpatterns = [
-        # path("", post_list, name="post_list"),
-        path("",PostList.as_view(), name="home"),
-        path("receitas/",ReceitaList.as_view(),name="receitas")
-        ]
-
+    path("", PostList.as_view(), name="home"),
+    path("receitas/", ReceitaList.as_view(), name="receitas"),
+    path("produtos/", ProdutoList.as_view(), name="lista_produtos"),  # <- novo caminho
+]

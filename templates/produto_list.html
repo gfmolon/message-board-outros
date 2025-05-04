@@ -1,0 +1,23 @@
+
+<h1>Lista de Produtos</h1>
+
+<ul>
+    {% for produto in produtos %}
+    <li>
+        <h2>{{ produto.nome }}</h2>
+        <p>{{ produto.descricao }}</p>
+        <p>Preço: R$ {{ produto.preco }}</p>
+
+        {% if produto.imagem_pequena %}
+            <img src="{{ produto.imagem_pequena.url }}" alt="Imagem pequena" width="150">
+        {% endif %}
+
+        {% if produto.imagem_grande %}
+            <img src="{{ produto.imagem_grande.url }}" alt="Imagem grande" width="300">
+        {% endif %}
+    </li>
+    <hr>
+    {% endfor %}
+</ul>
+
+
