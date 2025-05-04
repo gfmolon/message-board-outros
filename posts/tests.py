@@ -12,6 +12,7 @@ class PostTests(TestCase):
         cls.post = Post.objects.create(text="This is a test!")
         cls.receita = Receita.objects.create(text="This is a teste!")
         cls.produto = Produto.objects.create(
+            ordem=1,
             nome="Teste",
             descricao="Teste",
             preco=1.0,
@@ -23,6 +24,7 @@ class PostTests(TestCase):
     def test_model_content(self):
         self.assertEqual(self.post.text, "This is a test!")
         self.assertEqual(self.receita.text, "This is a teste!")
+        self.assertEqual(self.produto.ordem, 1)
         self.assertEqual(self.produto.nome, "Teste")
         self.assertEqual(self.produto.descricao, "Teste")
         self.assertEqual(self.produto.preco, 1.0)
